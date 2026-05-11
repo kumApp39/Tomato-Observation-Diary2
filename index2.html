@@ -788,13 +788,13 @@
         dateDiv.appendChild(pdfBtn);
         
         const noticeContainer = document.createElement('div');
-        noticeContainer.className = 'w-full flex-1 flex flex-col border-4 border-blue-200 rounded-2xl p-4 md:p-6 bg-blue-50 shadow-inner min-h-[150px] md:min-h-[250px]';
+        noticeContainer.className = 'w-full grow flex flex-col border-4 border-blue-200 rounded-2xl p-4 md:p-6 bg-blue-50 shadow-inner min-h-[150px] md:min-h-[250px]';
         const noticeLabel = document.createElement('div');
         noticeLabel.className = 'text-xl md:text-2xl font-bold text-blue-700 mb-2 md:mb-3 border-b-2 border-blue-200 pb-2 shrink-0';
         noticeLabel.innerHTML = '✏️ きづいたこと';
         
         const noticeText = document.createElement('div');
-        noticeText.className = 'text-lg md:text-2xl text-gray-800 flex-1 overflow-y-auto whitespace-pre-wrap leading-relaxed font-medium';
+        noticeText.className = 'text-lg md:text-2xl text-gray-800 grow overflow-y-auto whitespace-pre-wrap leading-relaxed font-medium';
         noticeText.textContent = record.notice || '（かいてないよ）';
         
         noticeContainer.appendChild(noticeLabel);
