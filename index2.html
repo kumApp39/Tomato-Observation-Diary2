@@ -130,7 +130,7 @@
       <img id="previewImage" src="" alt="とったしゃしん" class="max-w-full max-h-full object-contain rounded-2xl">
     </div>
 
-    <!-- ★変更：自由記述のテキストエリアを削除し、選択式のカードに置き換え -->
+    <!-- ★選択式のカード -->
     <div class="w-full max-w-2xl mb-4 md:mb-6 shrink-0">
       <label class="block text-2xl md:text-3xl font-bold text-green-700 mb-3 md:mb-4 flex items-center gap-2">
         <span>✏️</span> いまの ようすは どれかな？
@@ -587,7 +587,6 @@
       NOTICE_OPTIONS.forEach((opt, index) => {
         const isSelected = currentNoticeIndex === index;
         const card = document.createElement('div');
-        // 選択されたカードは色を変え、少し浮き上がるデザインに
         card.className = `btn-3d cursor-pointer border-4 rounded-2xl p-3 md:p-4 flex gap-3 transition-all ${
           isSelected 
             ? 'border-blue-500 bg-blue-50 shadow-none transform translate-y-1' 
@@ -596,7 +595,7 @@
         card.onclick = () => {
           playSound('click');
           currentNoticeIndex = index;
-          renderNoticeOptions(); // 選択状態を再描画
+          renderNoticeOptions(); 
         };
         
         card.innerHTML = `
@@ -647,7 +646,6 @@
         const opt = NOTICE_OPTIONS[currentNoticeIndex];
         noticeText = `${opt.icon} ${opt.title}\n\n${opt.text}`;
       } else {
-        // 選んでいない場合はアラートを出す
         showError('いまの ようすの カードを<br>どれか えらんでね！');
         return;
       }
@@ -680,7 +678,7 @@
         id: Date.now(),
         dateText: getTodayString(),
         image: currentImageData,
-        notice: noticeText, // 生成したテキストを保存
+        notice: noticeText, 
         yasai: currentYasai,
         userName: currentUserName,
         watered: isPreviewWatered 
